@@ -1,0 +1,69 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+<link rel="stylesheet" type="text/css" href="../webpart/sharedAssets/vuetify.min.css" />
+
+<!--<script type="text/javascript" src="../../_script/es6promise.js"></script>-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
+<script type="text/javascript" src="../webpart/sharedAssets/polyfill.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/axios.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/moment.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vue.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vuetify.js"></script>
+
+<style>
+    #uProfApp .profKey {
+        font-weight: bold;
+        text-align: right
+    }
+
+    #uProfApp span {
+        margin: 3px;
+        padding: 3px;
+    }
+
+    #uProfApp div {
+        margin: 10px;
+    }
+</style>
+<div id="uProfApp">
+    <table style="padding:5px" class="table">
+        <tr>
+            <td colspan="2">
+                <img v-bind:src="PictureURL" width="55" height="55">
+                <!-- <a v-bind:href="newProfPage">Edit profile</a>-->
+            </td>
+        </tr>
+        <tr scope="row">
+            <td v-bind:class='{profKey:style}' width="35%">Account Name:</td>
+            <td>{{AccountName}}</td>
+        </tr>
+        <tr>
+            <td v-bind:class='{profKey:style}'>Job Title:</td>
+            <td>{{jobTitle}}</td>
+        </tr>
+        <tr>
+            <td v-bind:class='{profKey:style}'>Email:</td>
+            <td>{{workEmail}}</td>
+        </tr>
+        <tr>
+            <td v-bind:class='{profKey:style}'>Office:</td>
+            <td>{{Office}}</td>
+        </tr>
+        <tr>
+            <td v-bind:class='{profKey:style}'>Department:</td>
+            <td>{{Department}}</td>
+        </tr>
+        <tr>
+            <td v-bind:class='{profKey:style}'>Past Projects:</td>
+            <td>{{PastProjects}}</td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="../webpart/userProfiles/getUserProfile.js"></script>

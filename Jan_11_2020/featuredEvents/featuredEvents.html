@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
+<script type="text/javascript" src="../webpart/sharedAssets/polyfill.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/axios.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/moment.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vue.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vuetify.js"></script>
+
+<div id="events">
+	<v-app id="inspire">
+		<div class="container-fluid">
+			<v-row v-for="post in postArray" v-bind:key="post.id">
+				<table>
+					<tr>
+						<td style="padding:5px;width:80px;vertical-align:top;">
+							<img v-bind:src="post.BlogImg || alternateImg" v-bind:alt="post.BlogImgAlt" width="65"
+								height="55" />
+						</td>
+						<td>
+							<h3><a v-bind:href="remainLink + post.Id + sourceLink">{{post.Title}}</a></h3>
+							<b>by</b> {{post.Author0 || "N/A"}} |
+							{{convertDate(post.EventDate)}}
+							<p style="word-break:normal;">
+								{{stripHtml(post.Description)}}<a v-bind:href="editLink + post.Id">read more</a>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</v-row>
+			<div class="row">
+				<div class="alert alert-info" style="margin-top:5px;margin-bottom:0px !important;">
+					<a :href="eventLink">Event Calendar</a>
+				</div>
+			</div>
+		</div>
+	</v-app>
+</div>
+<script type="text/javascript" src="../webpart/featuredEvents/featuredEvents.js"></script>

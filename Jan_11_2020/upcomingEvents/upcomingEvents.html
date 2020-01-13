@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
+<script type="text/javascript" src="../webpart/sharedAssets/polyfill.min.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/axios.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/moment.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vue.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vuetify.js"></script>
+
+<style>
+    /*Hide lef nav*/
+    #sideNavBox {
+        DISPLAY: none
+    }
+
+    #contentBox {
+        MARGIN-LEFT: 5px
+    }
+
+    #appUpEv tr {
+        /* display: block;
+    margin-bottom: 1.5rem;*/
+        padding: 1rem 0.5rem 0.5rem 1rem;
+        background-color: transparentize(white, 0.15);
+        box-shadow: 0 0 1rem transparentize(black, 0.9);
+    }
+
+    #appUpEv td {
+        display: inline-block;
+        /*margin: 0 0.5rem 0.5rem 0;*/
+        padding: 0.5rem;
+        text-align: left;
+        background-color: white;
+        border: 1px solid transparentize(#58C25F, 0.5);
+    }
+
+    #appUpEv td:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    #appUpEv td#tdEvent {
+        text-align: center;
+    }
+
+    #appUpEv td:before {
+        float: left;
+        margin: -0.5rem 0.5rem -0.5rem -0.5rem;
+        padding: 0.625rem 0.5rem 0.625rem;
+        font-size: 0.75em;
+        font-weight: bold;
+        background: transparentize(#58C25F, 0.9);
+        color: #58C25F;
+    }
+
+    #appUpEv table hr {
+        height: 1px;
+        background-image: linear-gradient(to right, red, yellow);
+        border: none;
+    }
+</style>
+
+<div id="appUpEv">
+    <sp-event-card2></sp-event-card2>
+    <sp-eventlist-card2></sp-eventlist-card2>
+
+</div>
+
+<script type="text/javascript" src="../webpart/upcomingEvents/v-components/sp_event_card_2.js"></script>
+
+<script type="text/javascript" src="../webpart/upcomingEvents/v-components/sp_eventList_card_2.js"></script>
+
+<script type="text/javascript" src="../webpart/upcomingEvents/upcomingEvents.js"></script>

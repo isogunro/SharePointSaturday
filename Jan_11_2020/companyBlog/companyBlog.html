@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
+
+
+<script type="text/javascript" src="../webpart/sharedAssets/polyfill.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/axios.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/moment.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vue.js"></script>
+<script type="text/javascript" src="../webpart/sharedAssets/vuetify.js"></script>
+
+<div id="app">
+    <v-app id="inspire">
+        <div class="container-fluid">
+            <v-row v-for="post in postArray">
+                <!--<v-col cols="8" md="6">
+					<v-card class="pa-2" tile>
+						<img v-bind:src="post.BlogImg" v-bind:alt="post.BlogImgAlt" />
+					</v-card>
+				</v-col>-->
+                <table style="width:100%;margin-top:5px;margin-bottom:5px;border-bottom:1px gray solid">
+                    <tr>
+                        <td style="padding:5px;width:80px;vertical-align:top;">
+                            <img v-bind:src="post.BlogImg || alternateImg" v-bind:alt="post.BlogImgAlt" width="55"
+                                height="55" />
+                        </td>
+                        <td>
+                            <p class="bloghead">{{post.Title}}</p>
+                            <p>by {{post.Author|| "N/A"}} | {{convertDate(post.Created)}}
+                                <br />{{stripHtml(post.Body)}}<a v-bind:href="editLink + post.Id">read more</a></p>
+                        </td>
+
+                    </tr>
+                </table>
+            </v-row>
+            <div class="row">
+                <div class="alert alert-info" style="margin-top:5px;margin-bottom:0px !important;"><a
+                        :href="blogPostLink">More Posts</a></div>
+            </div>
+        </div>
+    </v-app>
+
+    <!--<table border="1" class="">
+		<tr v-for="post in postArray">
+			<td><img v-bind:src="post.BlogImg" v-bind:alt="post.BlogImgAlt" /></td>
+			<td>
+				Title:{{post.Title}}<br />by {{post.Author0}}<br />{{stripHtml(post.Body)}}<a
+					v-bind:href="editLink + post.Id"
+					>read more</a
+				>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">More Posts</td>
+		</tr>
+	</table> -->
+</div>
+<script type="text/javascript" src="../webpart/companyBlog/companyBlog.js"></script>
